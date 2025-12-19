@@ -9,9 +9,10 @@ void main() {
     await Firebase.initializeApp();
   });
 
-  testWidgets('Counter increments smoke test', (WidgetTester tester) async {
-    await tester.pumpWidget(const MyApp());
-    await tester.pumpAndSettle();
-  });
+  testWidgets('App builds without Firebase', (tester) async {
+  await tester.pumpWidget(const AppRoot(enableFirebase: false));
+  await tester.pumpAndSettle();
+  expect(find.byType(WelcomeScreen), findsOneWidget);
+});
 }
 
