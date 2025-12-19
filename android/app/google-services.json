@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "396702708014",
+    "project_id": "health-diary-aee41",
+    "storage_bucket": "health-diary-aee41.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:396702708014:android:d2adac347bd7bf093fcabf",
+        "android_client_info": {
+          "package_name": "com.example.health_diary"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "396702708014-ptk7u3u3fr5str8v3kfksjegvpilcjjf.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.health_diary",
+            "certificate_hash": "714cbf2acc3831d96f9230108e73117a964aca36"
+          }
+        },
+        {
+          "client_id": "396702708014-mnvhnijaiql24turllomaal70n7pc005.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC_M1tXavuJxOoy2hWE2OvxJzTSPYbeasE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "396702708014-mnvhnijaiql24turllomaal70n7pc005.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
