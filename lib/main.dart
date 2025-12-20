@@ -6,8 +6,7 @@ import 'package:provider/provider.dart';
 
 import '../../core/constants/app_strings.dart';
 import '../../screens/auth/welcome_screen.dart';
-import 'core/providers/metrics_provider.dart';
-import 'core/repositories/metrics_repository.dart';
+import 'core/providers/firebase_metrics_provider.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -36,7 +35,7 @@ class AppRoot extends StatelessWidget {
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(
-          create: (_) => MetricsProvider(),
+          create: (_) => FirebaseMetricsProvider(),
         ),
       ],
       child: MyApp(enableFirebase: enableFirebase),
