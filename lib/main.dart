@@ -6,15 +6,12 @@ import 'package:provider/provider.dart';
 
 import '../../core/constants/app_strings.dart';
 import '../../screens/auth/welcome_screen.dart';
-
-// ✅ Твої нові класи
 import 'core/providers/metrics_provider.dart';
 import 'core/repositories/metrics_repository.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
-  // ✅ Firebase лише в реальному запуску
   try {
     if (Firebase.apps.isEmpty) {
       await Firebase.initializeApp(
@@ -26,13 +23,10 @@ Future<void> main() async {
     debugPrint('Firebase initialization failed: $e');
   }
 
-  // ✅ Crashlytics (тільки якщо Firebase реально піднявся)
   FlutterError.onError = FirebaseCrashlytics.instance.recordFlutterFatalError;
 
   runApp(const AppRoot(enableFirebase: true));
 }
-
-/// ✅ Обгортка над Provider-ами + MyApp
 class AppRoot extends StatelessWidget {
   final bool enableFirebase;
   const AppRoot({super.key, required this.enableFirebase});
@@ -42,7 +36,7 @@ class AppRoot extends StatelessWidget {
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(
-          create: (_) => MetricsProvider(MetricsRepository()),
+          create: (_) => MetricsProvider(),
         ),
       ],
       child: MyApp(enableFirebase: enableFirebase),
@@ -59,7 +53,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: AppStrings.appTitle,
-      // ✅ В тестах НЕ додаємо observers, які тягнуть FirebaseAnalytics
+
       navigatorObservers: const [],
       theme: ThemeData(
         primarySwatch: Colors.blue,
